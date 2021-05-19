@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2830505091909144959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2830505091909144956}
+  - component: {fileID: 2830505091927925424}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2830505091909144956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2830505091909144959}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2830505091927925424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2830505091909144959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 369427bafabf7f547a86551e459ac88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuUI: {fileID: 0}
+  gameUI: {fileID: 0}
+  emptyObj: {fileID: 2469123074191556804, guid: ba0b5a92b352d724bb0aaef4c21cd530, type: 3}
+  gameStart: 0
+  touchPointer: 0
+  jp: {fileID: 0}
+  ragdoll: {fileID: 7181039847261234796, guid: 50016ed6152f5f543b02b87d21100e89, type: 3}
+  levelSlider: {fileID: 0}
+  scrorer: {fileID: 4703104721704292880, guid: faf24f6dff463ac40ba99b23e0d4cde7, type: 3}
+  mat:
+  - clr1: {fileID: 2100000, guid: d3535bf061bd35e47a54a5e5b41c8e58, type: 2}
+    clr2: {fileID: 2100000, guid: 94dc9c5b026d7c546a14149043ad840c, type: 2}
+  - clr1: {fileID: 2100000, guid: 886b2b583da34804c92aadee3075eb80, type: 2}
+    clr2: {fileID: 2100000, guid: 18fea3eb5fac1af41b60fba25bfcbfea, type: 2}
+  - clr1: {fileID: 2100000, guid: e9c0f554ab75271428cbbea4135892d8, type: 2}
+    clr2: {fileID: 2100000, guid: e6ffa91019641f244a283e0bfeb69683, type: 2}
+  - clr1: {fileID: 2100000, guid: eee25610d21adf342b0dd2b36a0fb1d3, type: 2}
+    clr2: {fileID: 2100000, guid: 2acbba2e1e918b440af66e20840c21ca, type: 2}
+  - clr1: {fileID: 2100000, guid: c5ead2c298f66ef49a0408c89be045db, type: 2}
+    clr2: {fileID: 2100000, guid: dd75363596696a94288c2b5500f4136c, type: 2}
+  - clr1: {fileID: 2100000, guid: bbef0495e28187c40b7cd6b54efbe401, type: 2}
+    clr2: {fileID: 2100000, guid: 602ee9a042c4c6c40b575624bff8f680, type: 2}
+  - clr1: {fileID: 2100000, guid: ab5493cfd720de24a8dcc2f81c2fcfc2, type: 2}
+    clr2: {fileID: 2100000, guid: 0177bd95fe9abb947be3e675551d80a4, type: 2}
+  - clr1: {fileID: 2100000, guid: ee34bb30c5e834c4b83127be69d3f58d, type: 2}
+    clr2: {fileID: 2100000, guid: 483e51e344c3d9443a6bc79a2c124efb, type: 2}
+  - clr1: {fileID: 2100000, guid: d4945327018eb1447a3b566ecba8354e, type: 2}
+    clr2: {fileID: 2100000, guid: b3bcc62b7b8e4c9419925970782cb198, type: 2}
+  - clr1: {fileID: 2100000, guid: 4ee5ebaf4140fa14a9041250d9899a7d, type: 2}
+    clr2: {fileID: 2100000, guid: c5f701693d4d2b240ba397c1c9f7a339, type: 2}
+  wonUI: {fileID: 0}
+  loseUI: {fileID: 0}
+  tapBtn: {fileID: 0}
+  hand: {fileID: 0}
+  circle: {fileID: 0}
+  finishRodHolder: {fileID: 0}
+  crowdMat:
+  - {fileID: 2100000, guid: 92238fa23b0368c429d37edb89cf516b, type: 2}
+  - {fileID: 2100000, guid: 2e900adc9287dd2439b7a542f38d578f, type: 2}
+  - {fileID: 2100000, guid: 21c833b0422f851459c6adb134001aae, type: 2}
+  - {fileID: 2100000, guid: 4b6d1a00a51196f4ead428a7342031d3, type: 2}
+  - {fileID: 2100000, guid: 440a01370d03b6245a989d5aad017d27, type: 2}
+  - {fileID: 2100000, guid: e606b2831f057f847b3d53db0a9bdc73, type: 2}
+  - {fileID: 2100000, guid: cdf9c6562742e3a4cbba3c99e66840e3, type: 2}
+  - {fileID: 2100000, guid: e7dcd40b8507f224ea46692b61609637, type: 2}

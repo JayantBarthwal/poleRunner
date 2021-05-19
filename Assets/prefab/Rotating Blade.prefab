@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ad59ac61d77954a8aec76c5a9d798e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rot: {x: 0, y: 0, z: 360}
+  speed: 0.2
 --- !u!64 &5125697271661584886
 MeshCollider:
   m_ObjectHideFlags: 0
