@@ -856,7 +856,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77313977}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -4597,6 +4597,16 @@ MonoBehaviour:
   tapBtn: {fileID: 225654682}
   hand: {fileID: 346794172}
   circle: {fileID: 77313979}
+  finishRodHolder: {fileID: 0}
+  crowdMat:
+  - {fileID: 2100000, guid: 92238fa23b0368c429d37edb89cf516b, type: 2}
+  - {fileID: 2100000, guid: 2e900adc9287dd2439b7a542f38d578f, type: 2}
+  - {fileID: 2100000, guid: 21c833b0422f851459c6adb134001aae, type: 2}
+  - {fileID: 2100000, guid: 4b6d1a00a51196f4ead428a7342031d3, type: 2}
+  - {fileID: 2100000, guid: 440a01370d03b6245a989d5aad017d27, type: 2}
+  - {fileID: 2100000, guid: e606b2831f057f847b3d53db0a9bdc73, type: 2}
+  - {fileID: 2100000, guid: cdf9c6562742e3a4cbba3c99e66840e3, type: 2}
+  - {fileID: 2100000, guid: e7dcd40b8507f224ea46692b61609637, type: 2}
 --- !u!4 &525671243
 Transform:
   m_ObjectHideFlags: 0
@@ -5460,7 +5470,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602818900}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -11974,7 +11984,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462079365}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

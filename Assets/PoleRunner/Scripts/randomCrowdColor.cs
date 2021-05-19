@@ -5,12 +5,13 @@ using UnityEngine;
 public class randomCrowdColor : MonoBehaviour
 {
     public MeshRenderer[] mr;
-    private void Awake()
+    private void Start()
     {
-        Color c= Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+        int rc = Random.Range(0,jayantManager.instance.crowdMat.Length);
+        Material c = jayantManager.instance.crowdMat[rc];
         for (int i = 0; i < mr.Length; i++)
         {
-            mr[i].material.color = c;
+            mr[i].material = c;
 
         }
     }

@@ -252,7 +252,7 @@ public class jayantPlayer : MonoBehaviour
 
         if (other.CompareTag("clrChange"))
         {
-            myMat = other.gameObject.GetComponent<MeshRenderer>().material;
+            myMat = other.gameObject.GetComponentInParent<clrChangeScript>().changeMat;
             GetComponentInChildren<SkinnedMeshRenderer>().material = myMat;
             jayantManager.instance.changeFinishRodColor(myMat);
 
@@ -418,8 +418,8 @@ public class jayantPlayer : MonoBehaviour
 
     public void spawnRagdool(Vector3 pos, Quaternion rot)
     {
-        Instantiate(jayantManager.instance.ragdoll, pos, rot);
-
+        GameObject rd= Instantiate(jayantManager.instance.ragdoll, pos, rot);
+        rd.GetComponentInChildren<SkinnedMeshRenderer>().material = myMat;
         Vector3 explosionPos = pos;
         Collider[] colliders = Physics.OverlapSphere(explosionPos, 5);
         foreach (Collider hit in colliders)

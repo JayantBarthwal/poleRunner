@@ -34,6 +34,8 @@ public class jayantManager : MonoBehaviour
     public Animation circle;
 
     public GameObject finishRodHolder;
+    public Material[] crowdMat;
+
     private void Awake()
     {
         if (instance==null)
