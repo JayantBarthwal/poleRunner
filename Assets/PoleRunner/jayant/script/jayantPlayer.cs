@@ -48,7 +48,7 @@ public class jayantPlayer : MonoBehaviour
         width = Screen.width;
         cc = GetComponent<CharacterController>();
         myMat = GetComponentInChildren<SkinnedMeshRenderer>().material;
-       
+        jayantManager.instance.changeFinishRodColor(myMat);
     }
 
     // Update is called once per frame

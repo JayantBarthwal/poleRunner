@@ -42,9 +42,11 @@ public class jayantManager : MonoBehaviour
         {
             instance = this;
         }
+        finishRodHolder = GameObject.Find("FINISH ROD HOLDER");
     }
     void Start()
     {
+        
         //Cursor.visible = false;
     }
 
@@ -54,13 +56,25 @@ public class jayantManager : MonoBehaviour
         hand.transform.position = Input.mousePosition;
         levelSlider.value = jayantPlayer.instance.gameObject.transform.position.z;
     }
+    bool onlyOnce = false;
     public void pointerDown() {
+
+        if (!onlyOnce)
+        {
+            onlyOnce = true;
+            gameStart = true;
+            jayantPlayer.instance.enabled = true;
+            jayantPlayer.instance.an.SetBool("run", true);
+            menuUI.SetActive(false);
+            gameUI.SetActive(true);
+        }
         circle.Play("handUp");
 
-        jp.enabled = true;
-        gameStart = true;
-        menuUI.SetActive(false);
-        gameUI.SetActive(true);
+        //jp.enabled = true;
+       
+        
+      
+      
         touchPointer = true;
         if (!jayantPlayer.instance.finishCrossed) {
             onPointerDown?.Invoke(); 
