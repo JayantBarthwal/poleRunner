@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6277437538635164157}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Block
+  m_TagString: hurdle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,10 +90,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587841695408691694}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: c74b61a957b84d747bdece1021fce9c5, type: 3}
 --- !u!1 &3913677145531591359
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 4403390190266740741}
   m_Layer: 0
   m_Name: 10 (up down)
-  m_TagString: Block
+  m_TagString: hurdle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 6640650445755099076}
   m_Layer: 0
   m_Name: Cylinder.001
-  m_TagString: Block
+  m_TagString: hurdle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,10 +219,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5527615091336869597}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7387706064836869012, guid: c74b61a957b84d747bdece1021fce9c5, type: 3}
 --- !u!111 &6640650445755099076

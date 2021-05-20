@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7114345763950284080}
   m_Layer: 0
   m_Name: 'Hurdle 2 '
-  m_TagString: Block
+  m_TagString: hurdle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +92,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7960765548196896001}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -110,6 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ad59ac61d77954a8aec76c5a9d798e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rot: {x: 0, y: 0, z: 1.5}
+  speed: 60
 --- !u!1 &9108899005765848097
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +126,7 @@ GameObject:
   - component: {fileID: 7114345762823225169}
   m_Layer: 0
   m_Name: Cube.003
-  m_TagString: Block
+  m_TagString: hurdle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,7 +202,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9108899005765848097}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
