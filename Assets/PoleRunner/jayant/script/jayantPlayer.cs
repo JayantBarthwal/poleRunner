@@ -203,7 +203,7 @@ public class jayantPlayer : MonoBehaviour
             {
                 Taptic.Light();
                 GameObject eff = Instantiate(jayantManager.instance.pickupEffHolder, other.transform.position, other.transform.rotation);
-                eff.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material.color = other.gameObject.GetComponent<MeshRenderer>().material.color;
+                //eff.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material.color = other.gameObject.GetComponent<MeshRenderer>().material.color;
                 Destroy(eff,2f);
                 addStackHolder(other.gameObject);
             }
