@@ -47,7 +47,7 @@ Animation:
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_CullingType: 1
 --- !u!1 &460136941982568884
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +87,7 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460136941982568884}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: c151753f1471f4e488d3a7bfff2b92fa, type: 2}
   m_Animations:
@@ -95,7 +95,7 @@ Animation:
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_CullingType: 1
 --- !u!1 &604602374215564269
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,9 +511,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6771758450281765241}
   - component: {fileID: 2178130087424007661}
+  - component: {fileID: 4870952885073650783}
   m_Layer: 0
   m_Name: RedCrowd
-  m_TagString: Untagged
+  m_TagString: crowd
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -557,6 +558,20 @@ MonoBehaviour:
   - {fileID: 660421932404678696}
   - {fileID: 2547035476792586821}
   - {fileID: 339473460009105456}
+--- !u!136 &4870952885073650783
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6247001491823592387}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 3.0667334
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.72523546, z: 0}
 --- !u!1 &7428188865457911472
 GameObject:
   m_ObjectHideFlags: 0

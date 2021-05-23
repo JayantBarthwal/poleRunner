@@ -10,11 +10,11 @@ public class activator : MonoBehaviour
     void Start()
     {
        
-        for (int i = 0; i < obj.Length; i++)
+       /* for (int i = 0; i < obj.Length; i++)
         {
             obj[i].SetActive(false);
         }
-        StartCoroutine(switchOn());
+        StartCoroutine(switchOn());*/
     }
     IEnumerator switchOn() {
         for (int i = 0; i < obj.Length; i++)

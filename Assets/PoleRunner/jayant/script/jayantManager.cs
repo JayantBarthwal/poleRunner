@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
+using TMPro;
 [Serializable]
 public struct myMaterials
 {
@@ -35,18 +36,36 @@ public class jayantManager : MonoBehaviour
 
     public GameObject finishRodHolder;
     public Material[] crowdMat;
+    public TextMeshProUGUI from, to;
 
+    public static int totalLevel;
+    public GameObject pickupEffHolder,floatingText;
+    
     private void Awake()
     {
         if (instance==null)
         {
             instance = this;
         }
+
+       /* if (PlayerPrefs.GetInt("setup") == 0)
+        {
+            PlayerPrefs.SetInt("setup", 1);
+            PlayerPrefs.SetInt("levelNum", 1);//first level can also play again
+
+        }*/
+        RenderSettings.fog = true;
         finishRodHolder = GameObject.Find("FINISH ROD HOLDER");
     }
     void Start()
     {
-        
+        /*if (PlayerPrefs.GetInt("levelNum") != SceneManager.GetActiveScene().buildIndex)
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetInt("levelNum"));
+        }*/
+        int num = PlayerPrefs.GetInt("levelNum");
+        from.text = num.ToString();
+        to.text = (num + 1).ToString();
         //Cursor.visible = false;
     }
 
@@ -70,11 +89,6 @@ public class jayantManager : MonoBehaviour
         }
         circle.Play("handUp");
 
-        //jp.enabled = true;
-       
-        
-      
-      
         touchPointer = true;
         if (!jayantPlayer.instance.finishCrossed) {
             onPointerDown?.Invoke(); 
@@ -113,7 +127,20 @@ public class jayantManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void nextClicked() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+       
+            int num = PlayerPrefs.GetInt("levelNum");
+            num += 1;
+
+        if (num==11)
+        {
+            num = 1;
+        }
+            PlayerPrefs.SetInt("levelNum", num);
+
+        
+
+        SceneManager.LoadScene(PlayerPrefs.GetInt("levelNum"));
     }
 
     public void changeFinishRodColor(Material mat) {

@@ -15,7 +15,7 @@ public class jayantCamera : MonoBehaviour
     private void Awake()
     {
 		instance = this;
-
+		target = FindObjectOfType<jayantPlayer>().gameObject.transform;
 	}
     void Update()
 	{

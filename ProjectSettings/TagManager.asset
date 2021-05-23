@@ -22,6 +22,9 @@ TagManager:
   - water
   - multiplier
   - clrChange
+  - crowd
+  - front
+  - back
   layers:
   - Default
   - TransparentFX

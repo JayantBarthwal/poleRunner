@@ -14,5 +14,25 @@ public class randomCrowdColor : MonoBehaviour
             mr[i].material = c;
 
         }
+       /* for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }*/
+       
+    }
+   private void OnTriggerEnter(Collider other)
+    {
+        /*if (other.CompareTag("front"))
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                transform.GetChild(i).gameObject.SetActive(true);
+            }
+
+        }*/
+        if (other.CompareTag("back"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

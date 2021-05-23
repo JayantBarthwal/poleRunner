@@ -35,16 +35,20 @@ public class jayantPlayer : MonoBehaviour
     bool shouldMoveLeftRight=true;
     public GameObject confiti;
     Vector3 impactDirVAl;
+    Vector3 forward;
+    bool lastfly = false;
+
 
     private void Awake()
     {
         instance = this;
         an.gameObject.transform.eulerAngles = new Vector3(0f, 0f, 0f);
-        jayantManager.instance.onPointerUp += pointerUpEvent;
-        jayantManager.instance.onPointerDown += pointerDownEvent;
+        forward = new Vector3(0f,-0.1f,1f);
     }
     void Start()
     {
+        jayantManager.instance.onPointerUp += pointerUpEvent;
+        jayantManager.instance.onPointerDown += pointerDownEvent;
         width = Screen.width;
         cc = GetComponent<CharacterController>();
         myMat = GetComponentInChildren<SkinnedMeshRenderer>().material;
@@ -58,7 +62,7 @@ public class jayantPlayer : MonoBehaviour
         if (!fly && !applyForce)
         {
 
-            cc.Move(Vector3.forward * Time.deltaTime * speed);
+            cc.Move(forward * Time.deltaTime * speed);
             smoke.SetActive(true);
         }
         else {
@@ -86,18 +90,13 @@ public class jayantPlayer : MonoBehaviour
                 }
                 float p = (Input.mousePosition.x - h) / width;
 
-            if (finishCrossed)
-            {
-                playerVelocity.x = p * 20;
-            }
-            else {
-                playerVelocity.x = p * 40;
-            }
-
-                p *= 20;
-                desiredPos = new Vector3(p + pos.x, 0f, cc.transform.position.z);
+         
+            playerVelocity.x = p * 40;
+            p *= 25;
+                desiredPos = new Vector3(p + pos.x, cc.transform.position.y, cc.transform.position.z);
                 desiredPos.x = Mathf.Clamp(desiredPos.x, -4.2f, 4.2f);
-                cc.transform.position = desiredPos;
+                //cc.transform.position = desiredPos;
+              if(!lastfly) cc.Move(desiredPos-transform.position);
                 #endregion
            
 
@@ -118,39 +117,41 @@ public class jayantPlayer : MonoBehaviour
         if (fly&& poleTopObj!=null)//time to fly
         {
             print("fly");
-            transform.position = poleTopObj.transform.position + offsetWithPole;
+            Vector3 pos = poleTopObj.transform.position + offsetWithPole;
+          
+                transform.position =  pos;
+           
             transform.eulerAngles = rotOffsetWithPole;
-            // transform.RotateAround(rotArndPoint, Vector3.right, 2);
-            // Vector3 rot = transform.eulerAngles;
-            // rot.x = 0;
-            // transform.eulerAngles = rot;
+           
 
             if (!stopRot)
             {
                 if (!finishCrossed)
                 {
-                    pole.transform.RotateAround(rotArndPoint, Vector3.right, 3*Time.deltaTime*20);
+                    pole.transform.RotateAround(rotArndPoint , Vector3.right, 3*Time.deltaTime*20);
 
                 }
                 else {
                     float x = pole.transform.localEulerAngles.x;
 
-                    if (x>89&&x<91)
+                    if (x>89&&x<360)
                     {
+                        lastfly = true;
                         print("last fly" + x);
                         an.SetBool("fall", true);
                         stopRot = true;
                     }
                     if (x < 90)
                     {
-                        pole.transform.RotateAround(rotArndPoint, Vector3.right, 3 * Time.deltaTime *20);
+                        pole.transform.RotateAround(rotArndPoint , Vector3.right, 3 * Time.deltaTime *20);
                     }
-                    else {
+                   /* else {
+                        lastfly = true;
                         print("last fly"+x);
-                        //jayantCamera.instance.flyingCamera();
-                        //an.SetBool("fall",true);
-                       // stopRot = true;
-                    }
+                        an.SetBool("fall", true);
+                        stopRot = true;
+                        
+                    }*/
                 }
                
             }
@@ -166,13 +167,13 @@ public class jayantPlayer : MonoBehaviour
 
         if (applyForce)
         {
-
             Vector3 impactDir = impactDirVAl;
             if (!finishCrossed)
             {
                 impactDir *= 2f;
             }
-            else{
+            else
+            {
                 impactDir *= 3f;
                 gravity = -1;
             }
@@ -185,9 +186,11 @@ public class jayantPlayer : MonoBehaviour
                 Vector3 pos = cc.transform.position;
                 pos.x = Mathf.Clamp(pos.x, -4.2f, 4.2f);
                 cc.transform.position = pos;
+                //cc.Move(pos-cc.transform.position);
             }
-            
+
         }
+       
     }
     bool workFine = true;
     private void OnTriggerEnter(Collider other)
@@ -195,12 +198,19 @@ public class jayantPlayer : MonoBehaviour
         
         if (other.CompareTag("pickup"))
         {
+           
             if (other.GetComponent<MeshRenderer>().material.color == myMat.color)
             {
+                Taptic.Light();
+                GameObject eff = Instantiate(jayantManager.instance.pickupEffHolder, other.transform.position, other.transform.rotation);
+                eff.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material.color = other.gameObject.GetComponent<MeshRenderer>().material.color;
+                Destroy(eff,2f);
                 addStackHolder(other.gameObject);
             }
             else
             {
+                Taptic.Failure();
+
                 deleteFromStacks();
             }
         }
@@ -278,7 +288,7 @@ public class jayantPlayer : MonoBehaviour
         Vector3 localPos = g.transform.localPosition;
         localPos.y = stackCounter * .009f;// 0.00492f;
         g.transform.localPosition = localPos;
-
+        Destroy(Instantiate(jayantManager.instance.floatingText,transform.position+Vector3.up*5,transform.rotation),1f);
         stackCounter += 1;
     }
     public void deleteFromStacks()
@@ -356,6 +366,8 @@ public class jayantPlayer : MonoBehaviour
     {
         if (stackCounter > 0)
         {
+            Taptic.Light();
+
             int childCount = stackPointer.transform.childCount;
             GameObject topObj = stackPointer.transform.GetChild(childCount - 1).gameObject;//top object of stack
 
@@ -397,6 +409,8 @@ public class jayantPlayer : MonoBehaviour
     }
 
     void died() {
+        Taptic.Failure();
+
         stackHolder.transform.SetParent(null);
         spawnRagdool(transform.position, transform.rotation);
         
