@@ -40,7 +40,27 @@ public class jayantManager : MonoBehaviour
 
     public static int totalLevel;
     public GameObject pickupEffHolder,floatingText;
-    
+
+    public AudioSource source;
+    public AudioClip CollectClips, fail, success,landingSound;
+
+    #region sounds
+    public void playCollect() {
+        source.PlayOneShot(CollectClips);
+    }
+    public void playfail()
+    {
+        source.PlayOneShot(fail);
+    }
+    public void playSuccess()
+    {
+        source.PlayOneShot(success);
+    }
+    public void landingSoundFn()
+    {
+        source.PlayOneShot(landingSound);
+    }
+    #endregion 
     private void Awake()
     {
         if (instance==null)

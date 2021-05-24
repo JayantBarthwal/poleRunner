@@ -217,6 +217,7 @@ public class jayantPlayer : MonoBehaviour
 
         if (other.CompareTag("ground"))
         {
+            jayantManager.instance.landingSoundFn();
             h = Input.mousePosition.x;
             pos = transform.position;
             stopRot = false;
@@ -238,6 +239,7 @@ public class jayantPlayer : MonoBehaviour
 
         if (other.CompareTag("hurdle"))
         {
+           
             print("player:hurdle");
             RotateBlade[] rb = FindObjectsOfType<RotateBlade>();
             foreach (var r in rb)
@@ -251,6 +253,7 @@ public class jayantPlayer : MonoBehaviour
 
         if (other.CompareTag("water"))
         {
+            jayantManager.instance.playSuccess();
             confiti.SetActive(true);
             an.Rebind();
             an.SetBool("dance",true);
@@ -279,6 +282,7 @@ public class jayantPlayer : MonoBehaviour
 
     public void addStackHolder(GameObject g)
     {
+        jayantManager.instance.playCollect();
         g.tag = "Untagged";
         g.transform.position = stackPointer.transform.position;
         g.transform.SetParent(stackPointer.transform);
@@ -409,6 +413,7 @@ public class jayantPlayer : MonoBehaviour
     }
 
     void died() {
+        jayantManager.instance.playfail();
         Taptic.Failure();
 
         stackHolder.transform.SetParent(null);
